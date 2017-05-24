@@ -177,6 +177,8 @@ public class ChairmanMenu {
                     System.out.println("Indtast medlemsID for det medlem som skal redigeres: ");
                     int editSearch = sc.nextInt();
                     int editSearchListLength = memberList.size();
+                    boolean newIsActive = false;
+                    boolean newIsFemale = false;
                     for (int i = 0; i < editSearchListLength; i++) {
                         if (memberList.get(i).getMemberID()==(editSearch)) {
                             boolean editMemberLoop = true;
@@ -207,12 +209,12 @@ public class ChairmanMenu {
                                         break;
                                     case '4' :
                                         System.out.println("Angiv medlemmets nye køn."
-                                                + "\n Er medlemmet en kvinde? (true/false)");
+                                                + "\n Er medlemmet en kvinde? (j/n)");
                                         keyinput = sc.next();
-                                        if (keyinput == "j") {
-                                            boolean newIsFemale = true;
+                                        if (keyinput.equalsIgnoreCase("j")) {
+                                            newIsFemale = true;
                                         } else {
-                                            boolean newIsFemale = false;
+                                            newIsFemale = false;
                                         }
                                         memberList.get(i).setIsFemale(newIsFemale);
                                         break;
@@ -224,12 +226,12 @@ public class ChairmanMenu {
                                         break;
                                     case '6' :
                                         System.out.println("Angiv medlemmets nye status."
-                                                + "Er medlemmet aktivt? (true/false)");
+                                                + "Er medlemmet aktivt? (j/n)");
                                         keyinput = sc.next();
-                                        if (keyinput == "j") {
-                                            boolean newIsActive = true;
+                                        if (keyinput.equalsIgnoreCase("j")) {
+                                            newIsActive = true;
                                         } else {
-                                            boolean newIsActive = false;
+                                            newIsActive = false;
                                         }
                                         memberList.get(i).setIsActive(newIsActive);
                                         break;
