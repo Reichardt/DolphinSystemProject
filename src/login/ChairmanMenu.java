@@ -242,11 +242,15 @@ public class ChairmanMenu {
                                         System.out.println("Ugyldigt valg, prøv igen.");
                                 }
                             }
+<<<<<<< Updated upstream
                         } /**else {
                             System.out.println("Ugyldigt medlemsID. Medlemmet kan derfor ikke redigeres!");
                             System.out.println("");
-                            break; 
+                            break;
                         } **/
+=======
+                        }
+>>>>>>> Stashed changes
                     }
                     break;
                 case '3' :
