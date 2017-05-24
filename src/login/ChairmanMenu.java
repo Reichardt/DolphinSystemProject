@@ -186,7 +186,7 @@ public class ChairmanMenu {
                                 System.out.println("");
                                 System.out.println("Hvad vil du redigere?"
                                         + "\n1. Fornavn. \n2. Efternavn. \n3. Email. \n4. Køn \n5. Træner status. "
-                                        + "\n6. Aktiv/Passiv status. \n7. Kontingentafgift. \n8. Afslut redigering.");
+                                        + "\n6. Aktiv/Passiv status. \n7. Afslut redigering.");
 
                                 char editMember = sc.next().charAt(0);
                                 switch(editMember) {
@@ -208,7 +208,12 @@ public class ChairmanMenu {
                                     case '4' :
                                         System.out.println("Angiv medlemmets nye køn."
                                                 + "\n Er medlemmet en kvinde? (true/false)");
-                                        boolean newIsFemale = sc.nextBoolean();
+                                        keyinput = sc.next();
+                                        if (keyinput == "j") {
+                                            boolean newIsFemale = true;
+                                        } else {
+                                            boolean newIsFemale = false;
+                                        }
                                         memberList.get(i).setIsFemale(newIsFemale);
                                         break;
                                     case '5' :
@@ -220,15 +225,15 @@ public class ChairmanMenu {
                                     case '6' :
                                         System.out.println("Angiv medlemmets nye status."
                                                 + "Er medlemmet aktivt? (true/false)");
-                                        boolean newIsActive = sc.nextBoolean();
+                                        keyinput = sc.next();
+                                        if (keyinput == "j") {
+                                            boolean newIsActive = true;
+                                        } else {
+                                            boolean newIsActive = false;
+                                        }
                                         memberList.get(i).setIsActive(newIsActive);
                                         break;
                                     case '7' :
-                                        System.out.println("Angiv medlemmets nye kontingentafgift:");
-                                        double newFee = sc.nextDouble();
-                                        memberList.get(i).setFee(newFee);
-                                        break;
-                                    case '8' :
                                         editMemberLoop = false;
                                         break;
                                     default :
