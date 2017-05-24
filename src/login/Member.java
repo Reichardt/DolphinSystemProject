@@ -103,8 +103,8 @@ public class Member implements Serializable, Comparable {
 
     @Override
     public int compareTo(Object compare) {
-        int compareMemberID = ((Member)compare).getMemberID();
-        return this.memberID - compareMemberID;
+        int compareBirthYear = ((Member)compare).getBirthYear();
+        return this.birthYear - compareBirthYear;
    }
 
     public String getFirstName() {
