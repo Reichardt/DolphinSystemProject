@@ -17,10 +17,10 @@ public class Member implements Serializable, Comparable {
     private boolean isActive;
     private double fee;
     private boolean hasPaid;
-    
-     
+
+
     public Member(String firstName, String surName, String email, int birthYear, int memberID,
-                  String password, boolean isFemale, double fee, boolean hasPaid) {   
+                  String password, boolean isFemale, double fee, boolean hasPaid) {
         this.firstName = firstName;
         this.surName = surName;
         this.email = email;
@@ -31,31 +31,31 @@ public class Member implements Serializable, Comparable {
         this.fee = 1600;
         this.hasPaid = hasPaid;
     }
-    
+
     public Member() {
     }
-    
+
         public String printMember()
     {
         return "Medlems ID: " + memberID +
-        "\nFornavn: " + firstName + 
-        "\nEfternavn: " + surName + 
-        "\nFødselsdato: " + birthYear + 
-        "\nE-mail: " + email + 
+        "\nFornavn: " + firstName +
+        "\nEfternavn: " + surName +
+        "\nFødselsdato: " + birthYear +
+        "\nE-mail: " + email +
         "\nKvinde?: "+isFemale +
         "\nTræner?: " +isTrainer +
         "\nAktivt medlem? : " + isActive +
-        "\nKontingentafgift: " + fee + 
+        "\nKontingentafgift: " + getFee() +
         "\nBetalt? " + hasPaid;
-    
+
     }
-        
+
     @Override
     public int compareTo(Object compare) {
         int compareMemberID = ((Member)compare).getMemberID();
         return this.memberID - compareMemberID;
    }
-    
+
     public String getFirstName() {
         return firstName;
     }

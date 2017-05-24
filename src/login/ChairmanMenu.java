@@ -6,7 +6,7 @@
 package login;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 
 /**
@@ -53,12 +53,16 @@ public class ChairmanMenu {
                      /**
                     Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
                     **/
+                    int year = Calendar.getInstance().get(Calendar.YEAR);
                     String addUserResponse; //Holder brugerens svar om hvorvidt tilføj nyt medlem loop skal stoppes (j/n)
                     String firstName, surName, email, password;
                     int birthYear;
                     int memberID;
-                    boolean hasPaid, isFemale, isTrainer, isActive, isElite;
-                    double fee;
+                    boolean hasPaid, isFemale, isActive;
+                    boolean isTrainer = false;
+                    boolean isElite = false;
+                    double fee = 0;
+                    String keyinput;
 
                         do {
                             System.out.println("Sæt medlemsid, ID'et SKAL være fire cifre: " +
@@ -82,30 +86,52 @@ public class ChairmanMenu {
                         birthYear = sc.nextInt();
                         System.out.println("E-mail:");
                         email = sc.next();
-                        System.out.println("Er medlemmet en kvinde (true/false)");
-                        isFemale = sc.nextBoolean();
-                        System.out.println("Er medlemmet en træner? (true/false)");
-                        isTrainer = sc.nextBoolean();
-                        System.out.println("Er medlemmet en Elitesvømmer? (true/false)");
-                        isElite = sc.nextBoolean();
-                        System.out.println("Er medlemmet aktivt? (true/false)");
-                        isActive = sc.nextBoolean();
-                        System.out.println("Angiv medlemmets kontingentsafgift: ");
-                        fee = sc.nextDouble();
-                        System.out.println("Har medlemmet betalt? (true/false)");
-                        hasPaid = sc.nextBoolean();
-
+                        System.out.println("Er medlemmet en kvinde (j/n)");
+                        keyinput = sc.next();
+                        if (keyinput.equalsIgnoreCase("j")) {
+                            isFemale = true;
+                        } else {
+                            isFemale = false;
+                        }
+                        System.out.println("Er medlemmet aktivt? (j/n)");
+                        keyinput = sc.next();
+                        if (keyinput.equalsIgnoreCase("j")) {
+                            isActive = true;
+                            System.out.println("Er medlemmet en træner? (j/n)");
+                            keyinput = sc.next();
+                            if (keyinput.equalsIgnoreCase("j")) {
+                                isTrainer = true;
+                            } else {
+                                isTrainer = false;
+                                System.out.println("Er medlemmet en Elitesvømmer? (j/n)");
+                                keyinput = sc.next();
+                                if (keyinput.equalsIgnoreCase("j")) {
+                                    isElite = true;
+                                } else {
+                                    isElite = false;
+                                }
+                            }
+                        } else {
+                            isActive = false;
+                        }
+                        System.out.println("Har medlemmet betalt? (j/n)");
+                        keyinput = sc.next();
+                        if (keyinput == "j") {
+                            hasPaid = true;
+                        } else {
+                            hasPaid = false;
+                        }
                         if (isTrainer) {
                             //create coach
-                            Member u1 = new Coach(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
+                            Coach u1 = new Coach(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
                             memberList.add(u1);
                         } else if (isActive) {
                             if (isElite) {
-                                if (birthYear > 1999) {
+                                if (year - birthYear < 18) {
                                     //create juniorelite
                                     Member u1 = new JuniorEliteSwimmer(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
                                     memberList.add(u1);
-                                } else if (birthYear > 1957) {
+                                } else if (year - birthYear < 60) {
                                     //create seniorelite
                                     Member u1 = new SeniorEliteSwimmer(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
                                     memberList.add(u1);
@@ -115,11 +141,11 @@ public class ChairmanMenu {
                                     memberList.add(u1);
                                 }
                             } else {
-                                if (birthYear > 1999) {
+                                if (year - birthYear < 18) {
                                     //create juniorexercise
                                     Member u1 = new JuniorExerciseSwimmer(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
                                     memberList.add(u1);
-                                } else if (birthYear > 1957) {
+                                } else if (year - birthYear < 60) {
                                     //create seniorexercise
                                     Member u1 = new SeniorExerciseSwimmer(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
                                     memberList.add(u1);
@@ -207,7 +233,6 @@ public class ChairmanMenu {
                                         break;
                                     default :
                                         System.out.println("Ugyldigt valg, prøv igen.");
-
                                 }
                             }
                         }
