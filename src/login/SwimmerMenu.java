@@ -5,12 +5,8 @@
  */
 package login;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 
 public class SwimmerMenu {
@@ -28,7 +24,7 @@ public class SwimmerMenu {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
-        
+
         char menuChoice;
         boolean choiceLoop = true;
         while (choiceLoop == true)
@@ -42,8 +38,8 @@ public class SwimmerMenu {
                     System.out.println("Liste over trænere:");
                     for (int i = 0; i < memberList.size(); i++) {
                         if (memberList.get(i).getMemberID()/1000==3) {
-                            System.out.println("ID: " +memberList.get(i).getMemberID() + 
-                                    ", Fornavn: " +memberList.get(i).getFirstName() + 
+                            System.out.println("ID: " +memberList.get(i).getMemberID() +
+                                    ", Fornavn: " +memberList.get(i).getFirstName() +
                                     ", Efternavn: " +memberList.get(i).getSurName());
                         }
                     }
@@ -53,24 +49,20 @@ public class SwimmerMenu {
                             System.out.println("Angiv ID på de 3 trænere du vil have.");
                             System.out.println("Træner 1 (førsteprioritet):");
                             int coachChoice1 = sc.nextInt();
-                            memberList.get(i).setCoachChoice1(coachChoice1);                           
+                            memberList.get(i).setCoachChoice1(coachChoice1);
                             System.out.println("Træner 2 (andenprioritet):");
                             int coachChoice2 = sc.nextInt();
-                            memberList.get(i).setCoachChoice2(coachChoice2);                           
+                            memberList.get(i).setCoachChoice2(coachChoice2);
                             System.out.println("Træner 3 (tredjeprioritet):");
                             int coachChoice3 = sc.nextInt();
                             memberList.get(i).setCoachChoice3(coachChoice3);
-                            
+
                         }
                     }
-                    try {
-                        FileOutputStream fos = new FileOutputStream("memberList.txt");
-                        ObjectOutputStream oos = new ObjectOutputStream(fos);
-                        oos.writeObject(memberList); // write memberList to ObjectOutputStream
-                        oos.close();
-                    } catch(Exception ex) {
-                        ex.printStackTrace();
-                    }
+                    /** Herunder kalder vi klassen WriteData, som skaber en outputstream og
+                    skriver vores medlemsliste i en fil**/
+                    WriteData write = new WriteData();
+                    write.writeData(memberList);
                     break;
                 case '2' :
                     for (int i = 0; i < memberList.size(); i++) {
@@ -107,12 +99,11 @@ public class SwimmerMenu {
                             String medleyResponse = sc.next();
                             if (medleyResponse.equalsIgnoreCase("j")) {
                                 if (memberList.get(i).getIsFemale()==(true)) {
-                                   memberList.get(i).setMedley200Women(true); 
+                                   memberList.get(i).setMedley200Women(true);
                                 } else {
                                     memberList.get(i).setMedley200Men(true);
                                 }
-                                
-                            }                         
+                            }
                             System.out.println("Er du aktiv i marathon 10KM? (j/n)");
                             String marathonResponse = sc.next();
                             if (marathonResponse.equalsIgnoreCase("j")) {
@@ -128,16 +119,16 @@ public class SwimmerMenu {
                                 memberList.get(i).setDogPaddle(false);
                             }
                         }
-                    }                 
+                    }
                     break;
                 case '3' :
                     choiceLoop = false;
                     break;
-                default : 
+                default :
                     System.out.println("Ugyldigt valg, prøv igen.");
             }
         }
-    
+
     }
-    
+
 }

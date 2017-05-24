@@ -7,7 +7,6 @@ package login;
 
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
 
 /**
  *
@@ -275,15 +274,11 @@ public class ChairmanMenu {
                 default :
                     System.out.println("Ugyldigt valg, prøv igen.");
             }
-        
-        try {
-                        FileOutputStream fos = new FileOutputStream("memberList.txt");
-                        ObjectOutputStream oos = new ObjectOutputStream(fos);
-                        oos.writeObject(memberList); // write memberList to ObjectOutputStream
-                        oos.close();
-                    } catch(Exception ex) {
-                        ex.printStackTrace();
-                    }
+        /** Herunder kalder vi klassen WriteData, som skaber en outputstream og
+        skriver vores medlemsliste i en fil
+        **/
+        WriteData write = new WriteData();
+        write.writeData(memberList);
     }
 }
 }

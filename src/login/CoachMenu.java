@@ -61,14 +61,10 @@ public class CoachMenu {
                             memberList.get(i).setCoachChoice1(coachChoice1);
                         }
                     }
-                    try {
-                        FileOutputStream fos = new FileOutputStream("memberList.txt");
-                        ObjectOutputStream oos = new ObjectOutputStream(fos);
-                        oos.writeObject(memberList); // write memberList to ObjectOutputStream
-                        oos.close();
-                    } catch(Exception ex) {
-                        ex.printStackTrace();
-                    }
+                    /** Herunder kalder vi klassen WriteData, som skaber en outputstream og
+                    skriver vores medlemsliste i en fil**/
+                    WriteData write = new WriteData();
+                    write.writeData(memberList);
                     break;
                 case '2' :
                     System.out.println("BUTTERFLY\nHvad vil du gøre?" +
