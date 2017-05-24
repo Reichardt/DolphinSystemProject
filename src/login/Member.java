@@ -37,16 +37,41 @@ public class Member implements Serializable, Comparable {
 
         public String printMember()
     {
+        String sex;
+        String coach;
+        String aktiv;
+        String betalt;
+        if (isFemale) {
+            sex = "kvinde";
+        } else {
+            sex = "mand";
+        }
+        if (isTrainer) {
+            coach = "ja";
+        } else {
+            coach = "nej";
+        }
+        if (isActive) {
+            aktiv = "ja";
+        } else {
+            aktiv = "nej";
+        }
+        if (hasPaid) {
+            betalt = "ja";
+        } else {
+            betalt = "nej";
+        }
+
         return "Medlems ID: " + memberID +
         "\nFornavn: " + firstName +
         "\nEfternavn: " + surName +
         "\nFødselsdato: " + birthYear +
         "\nE-mail: " + email +
-        "\nKvinde?: "+isFemale +
-        "\nTræner?: " +isTrainer +
-        "\nAktivt medlem? : " + isActive +
+        "\nKøn: "+ sex +
+        "\nTræner: " + coach +
+        "\nAktivt medlem? : " + aktiv +
         "\nKontingentafgift: " + getFee() +
-        "\nBetalt? " + hasPaid;
+        "\nBetalt? " + betalt;
 
     }
 
