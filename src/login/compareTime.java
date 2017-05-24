@@ -31,8 +31,12 @@ public class compareTime {
         }
         
       Collections.sort(memberList);
-      for(Member birthYear: memberList)   // printing the sorted list of ages
-         System.out.print(birthYear.getFirstName() +" " + birthYear.getSurName() + ": "+ birthYear.getBirthYear() + "\n");
+      for(int i = 0; i<6; i++) {
+          System.out.println(memberList.get(i).getFirstName()+ " " + memberList.get(i).getSurName() + ": " + memberList.get(i).getBirthYear());
+      }   // printing the sorted list of ages
+         //System.out.print(birthYear.getFirstName() +" " + birthYear.getSurName() + ": "+ birthYear.getBirthYear() + "\n");
+//      for(Member birthYear: memberList)   // printing the sorted list of ages
+//         System.out.print(birthYear.getFirstName() +" " + birthYear.getSurName() + ": "+ birthYear.getBirthYear() + "\n");
     
     }
     
