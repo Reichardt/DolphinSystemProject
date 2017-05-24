@@ -51,7 +51,7 @@ public class ChairmanMenu {
             switch(menuChoice) {
                 case '1' :
                      /**
-                    Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
+                    Diverse variabler der bruges når nyt medlem skal ind i ArrayListen.
                     **/
                     int year = Calendar.getInstance().get(Calendar.YEAR);
                     String addUserResponse; //Holder brugerens svar om hvorvidt tilføj nyt medlem loop skal stoppes (j/n)
@@ -116,7 +116,7 @@ public class ChairmanMenu {
                         }
                         System.out.println("Har medlemmet betalt? (j/n)");
                         keyinput = sc.next();
-                        if (keyinput == "j") {
+                        if (keyinput.equalsIgnoreCase("j")) {
                             hasPaid = true;
                         } else {
                             hasPaid = false;
@@ -251,17 +251,19 @@ public class ChairmanMenu {
                     int deleteSearchListLength = memberList.size();
                     for (int i = 0; i < deleteSearchListLength; i++) {
                         if (memberList.get(i).getMemberID()==(deleteSearch)) {
-                            System.out.println("Er du sikker på at du vil slette dette medlem? (j/n)");
                             System.out.println(memberList.get(i).printMember());
+                            System.out.print("Er du sikker på at du vil slette dette medlem? (j/n)");
                             String deleteMemberConfirm = sc.next();
                             if (deleteMemberConfirm.equalsIgnoreCase("j")) {
                                 memberList.remove(i);
                                 System.out.println("Medlemmet er blevet slettet.");
                             }
-
+                        } else {
+                            System.out.println("Ugyldigt medlemsID. Intet medlem blev slettet!");
+                            System.out.println("");
+                            break;
                         }
                     }
-                    choiceLoop = false;
                     break;
                 case '4' :
                     choiceLoop = false;
