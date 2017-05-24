@@ -60,7 +60,6 @@ public class Login {
         } while (loginSuccess == false);
 
         int rightsID = loginMemberID/1000; //Systemet udregner hvilken menu brugeren vises baseret på deres medlemsID.
-        System.out.println(rightsID);
         char menu = (char)(rightsID + '0');
         switch(menu) {
             case '1' :

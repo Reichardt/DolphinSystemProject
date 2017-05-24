@@ -242,15 +242,11 @@ public class ChairmanMenu {
                                         System.out.println("Ugyldigt valg, prøv igen.");
                                 }
                             }
-<<<<<<< Updated upstream
                         } /**else {
                             System.out.println("Ugyldigt medlemsID. Medlemmet kan derfor ikke redigeres!");
                             System.out.println("");
                             break;
                         } **/
-=======
-                        }
->>>>>>> Stashed changes
                     }
                     break;
                 case '3' :
@@ -279,7 +275,7 @@ public class ChairmanMenu {
                 default :
                     System.out.println("Ugyldigt valg, prøv igen.");
             }
-        }
+        
         try {
                         FileOutputStream fos = new FileOutputStream("memberList.txt");
                         ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -289,4 +285,5 @@ public class ChairmanMenu {
                         ex.printStackTrace();
                     }
     }
+}
 }

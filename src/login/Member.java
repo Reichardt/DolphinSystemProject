@@ -94,7 +94,10 @@ public class Member implements Serializable, Comparable {
         "\nAktivt medlem? : " + aktiv +
         "\nKontingentafgift: " + getFee() +
         "\nBetalt? " + betalt +
-        "\nCoach 1: " + coachChoice1 ;
+        "\nTrænerprioritet 1: " + coachChoice1 +
+        "\nTrænerprioritet 2: " + coachChoice2 +
+        "\nTrænerprioritet 3: " + coachChoice3;
+        
 
     }
 

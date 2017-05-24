@@ -50,10 +50,17 @@ public class SwimmerMenu {
                     System.out.println("MedlemsID:"+memberID);
                     for (int i = 0; i < memberList.size(); i++) {
                         if (memberList.get(i).getMemberID()==memberID) {
-                            System.out.println("Angiv ID på de trænerer du vil have:");
-                            System.out.println("Træner 1:");
+                            System.out.println("Angiv ID på de 3 trænere du vil have.");
+                            System.out.println("Træner 1 (førsteprioritet):");
                             int coachChoice1 = sc.nextInt();
-                            memberList.get(i).setCoachChoice1(coachChoice1);
+                            memberList.get(i).setCoachChoice1(coachChoice1);                           
+                            System.out.println("Træner 2 (andenprioritet):");
+                            int coachChoice2 = sc.nextInt();
+                            memberList.get(i).setCoachChoice2(coachChoice2);                           
+                            System.out.println("Træner 3 (tredjeprioritet):");
+                            int coachChoice3 = sc.nextInt();
+                            memberList.get(i).setCoachChoice3(coachChoice3);
+                            
                         }
                     }
                     try {
@@ -66,6 +73,62 @@ public class SwimmerMenu {
                     }
                     break;
                 case '2' :
+                    for (int i = 0; i < memberList.size(); i++) {
+                        if (memberList.get(i).getMemberID()==memberID) {
+                            System.out.println("Er du aktiv i butterfly? (j/n)");
+                            String butterflyResponse = sc.next();
+                            if (butterflyResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setButterfly(true);
+                            } else {
+                                memberList.get(i).setButterfly(false);
+                            }
+                            System.out.println("Er du aktiv i brystsvømning? (j/n)");
+                            String breastResponse = sc.next();
+                            if (breastResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setBreast(true);
+                            } else {
+                                memberList.get(i).setBreast(false);
+                            }
+                            System.out.println("Er du aktiv i crawl? (j/n)");
+                            String crawlResponse = sc.next();
+                            if (crawlResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setCrawl(true);
+                            } else {
+                                memberList.get(i).setCrawl(false);
+                            }
+                            System.out.println("Er du aktiv i rygsvømning? (j/n)");
+                            String backStrokeResponse = sc.next();
+                            if (backStrokeResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setBackStroke(true);
+                            }else {
+                                memberList.get(i).setBackStroke(false);
+                            }
+                            System.out.println("Er du aktiv i 200 meter medley? (j/n)");
+                            String medleyResponse = sc.next();
+                            if (medleyResponse.equalsIgnoreCase("j")) {
+                                if (memberList.get(i).getIsFemale()==(true)) {
+                                   memberList.get(i).setMedley200Women(true); 
+                                } else {
+                                    memberList.get(i).setMedley200Men(true);
+                                }
+                                
+                            }                         
+                            System.out.println("Er du aktiv i marathon 10KM? (j/n)");
+                            String marathonResponse = sc.next();
+                            if (marathonResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setMarathon10K(true);
+                            }else {
+                                memberList.get(i).setMarathon10K(false);
+                            }
+                            System.out.println("Er du aktiv i hundesvømning? (j/n)");
+                            String dogPaddleResponse = sc.next();
+                            if (dogPaddleResponse.equalsIgnoreCase("j")) {
+                                memberList.get(i).setDogPaddle(true);
+                            } else {
+                                memberList.get(i).setDogPaddle(false);
+                            }
+                        }
+                    }                 
                     break;
                 case '3' :
                     choiceLoop = false;
