@@ -72,6 +72,7 @@ public class Login {
             case '3' :
                 break;
             case '4' :
+                SwimmerMenu.swimmerMenu(loginMemberID);
                 break;
 
 
