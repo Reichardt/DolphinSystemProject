@@ -5,7 +5,7 @@ import java.util.*;
 
 public class WriteData {
 
-    public void writeData(ArrayList<Member> memberList) {
+    public static void writeData(ArrayList<Member> memberList) {
         try {
             FileOutputStream fos = new FileOutputStream("memberList.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
