@@ -17,8 +17,7 @@ public class ChairmanMenu {
     public static void chairmanMenu() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Member> memberList = new ArrayList<Member>();
-
-
+        
         /**
          FileInputStreamen læser memberList.txt filen,
          og gendanner userList ArrayListen.
