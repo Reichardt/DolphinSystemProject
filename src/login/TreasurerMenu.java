@@ -23,18 +23,18 @@ public class TreasurerMenu {
             ois.close();
         } catch(Exception ex) {
             ex.printStackTrace();
-        }   
-                
-        
+        }
+
+
         char menuChoice;
-        boolean choiceLoop = true;  
+        boolean choiceLoop = true;
         while (choiceLoop == true)
-        {       
+        {
             System.out.println("Velkommen kasserer, hvad vil du i dag?" +
                 "\n1. Check kontingentrestance. " + "\n2. Registrér kontingentbetaling." + "\n3. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
-             case '1' :                
+             case '1' :
                 System.out.println("Medlemmer der ikke har betalt kontingent: ");
                  boolean search = false;
                  int searchListLength = memberList.size();
@@ -49,7 +49,7 @@ public class TreasurerMenu {
                       System.out.println("");
                   }
                 }
-                 
+
                 break;
              case '2' :
                 System.out.println("Indtast medlems ID for det medlem som har betalt:");
@@ -67,26 +67,21 @@ public class TreasurerMenu {
                      if (betaltKontingent == 'j') {
                          memberList.get(i).setHasPaid(true);
                      }
-                     
+
                  }
-                
+
                 }
-                /** Skriv den nye payStatus boolean ind i memberList.txt filen **/
-                try {
-                    FileOutputStream fos = new FileOutputStream("memberList.txt");
-                    ObjectOutputStream oos = new ObjectOutputStream(fos);   
-                    oos.writeObject(memberList); // write MenuArray to ObjectOutputStream
-                    oos.close(); 
-                    } catch(Exception ex) {
-                          ex.printStackTrace();
-                    }
+                /** Herunder kalder vi klassen WriteData, som skaber en outputstream og
+                skriver vores medlemsliste i en fil **/
+                WriteData write = new WriteData();
+                write.writeData(memberList);
                 break;
-             case '3' : 
+             case '3' :
                  choiceLoop = false;
                  break;
              default :
                 System.out.println("Ugyldigt valg, prøv igen.");
             }
-        }        
+        }
     }
 }
