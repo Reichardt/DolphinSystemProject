@@ -186,8 +186,8 @@ public class ChairmanMenu {
                                 System.out.println(memberList.get(i).printMember());
                                 System.out.println("");
                                 System.out.println("Hvad vil du redigere?"
-                                        + "\n1. Fornavn. \n2. Efternavn. \n3. Email. \n4. Køn \n5. Træner status. "
-                                        + "\n6. Aktiv/Passiv status. \n7. Afslut redigering.");
+                                        + "\n1. Fornavn. \n2. Efternavn. \n3. Fødselsår \n4. Email. \n5. Køn \n6. Træner status. "
+                                        + "\n7. Aktiv/Passiv status. \n8. Afslut redigering.");
 
                                 char editMember = sc.next().charAt(0);
                                 switch(editMember) {
@@ -202,11 +202,16 @@ public class ChairmanMenu {
                                         memberList.get(i).setSurName(newSurName);
                                         break;
                                     case '3' :
+                                        System.out.println("Angiv medlemmets nye fødselsår:");
+                                        int newBirthYear = sc.nextInt();
+                                        memberList.get(i).setBirthYear(newBirthYear);
+                                        break;
+                                    case '4' :
                                         System.out.println("Angiv medlemmets nye email:");
                                         String newEmail = sc.next();
                                         memberList.get(i).setEmail(newEmail);
                                         break;
-                                    case '4' :
+                                    case '5' :
                                         System.out.println("Angiv medlemmets nye køn."
                                                 + "\n Er medlemmet en kvinde? (j/n)");
                                         keyinput = sc.next();
@@ -217,13 +222,13 @@ public class ChairmanMenu {
                                         }
                                         memberList.get(i).setIsFemale(newIsFemale);
                                         break;
-                                    case '5' :
+                                    case '6' :
                                         System.out.println("Angiv medlemmets nye status."
                                                 + "\n Er medlemmet en træner?");
                                         boolean newTrainer = sc.nextBoolean();
                                         memberList.get(i).setIsTrainer(newTrainer);
                                         break;
-                                    case '6' :
+                                    case '7' :
                                         System.out.println("Angiv medlemmets nye status."
                                                 + "Er medlemmet aktivt? (j/n)");
                                         keyinput = sc.next();
@@ -234,7 +239,7 @@ public class ChairmanMenu {
                                         }
                                         memberList.get(i).setIsActive(newIsActive);
                                         break;
-                                    case '7' :
+                                    case '8' :
                                         editMemberLoop = false;
                                         break;
                                     default :

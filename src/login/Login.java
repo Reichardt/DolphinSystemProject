@@ -69,6 +69,7 @@ public class Login {
                 TreasurerMenu.treasurerMenu();
                 break;
             case '3' :
+                CoachMenu.coachMenu();
                 break;
             case '4' :
                 SwimmerMenu.swimmerMenu(loginMemberID);

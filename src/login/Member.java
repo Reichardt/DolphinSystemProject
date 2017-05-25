@@ -87,7 +87,7 @@ public class Member implements Serializable, Comparable {
         return "Medlems ID: " + memberID +
         "\nFornavn: " + firstName +
         "\nEfternavn: " + surName +
-        "\nFødselsdato: " + birthYear +
+        "\nFødselsår: " + birthYear +
         "\nE-mail: " + email +
         "\nKøn: "+ sex +
         "\nTræner: " + coach +
@@ -96,15 +96,16 @@ public class Member implements Serializable, Comparable {
         "\nBetalt? " + betalt +
         "\nTrænerprioritet 1: " + coachChoice1 +
         "\nTrænerprioritet 2: " + coachChoice2 +
-        "\nTrænerprioritet 3: " + coachChoice3;
-        
+        "\nTrænerprioritet 3: " + coachChoice3 +
+        "\nBedste Butterfly Tid: " + bestTimeButterfly + " millisekunder";
+
 
     }
 
     @Override
     public int compareTo(Object compare) {
-        int compareMemberID = ((Member)compare).getMemberID();
-        return this.memberID - compareMemberID;
+        int compareTime = ((Member)compare).getBirthYear();
+        return this.birthYear - compareTime;
    }
 
     public String getFirstName() {

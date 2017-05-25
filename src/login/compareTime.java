@@ -5,16 +5,9 @@
  */
 package login;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
 import java.util.*;
 
-/**
- *
- * @author Nikolaj Reichardt
- */
 public class compareTime {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -29,11 +22,11 @@ public class compareTime {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
-        
+
       Collections.sort(memberList);
       for(Member memberID: memberList)   // printing the sorted list of ages
-         System.out.print(memberID.getFirstName() +"  : "+ memberID.getMemberID() + "\n");
-    
+         System.out.print(memberID.getFirstName() +"  : "+ memberID.getBirthYear() + "\n");
+
     }
-    
+
 }
