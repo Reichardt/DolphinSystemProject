@@ -32,9 +32,10 @@ public class CoachMenu {
             int medlemsID;
             int bestTime;
             System.out.println("Velkommen Træner, hvilken disciplin gælder dette besøg?" +
-                    "\n1. Butterfly" + "\n2. Brøst" + "\n3. Crawl" + "\n4. Rygcrawl" + "\n5. Rygsvømning" +
-                    "\n6. 200 m Medley kvinder" + "\n7. 200m Medley mænd" + "\n8. Marathon 10 km" + "\n9. Hundesvømning" );
-            menuChoice = sc.next().charAt(0);
+                    "\n1. Butterfly" + "\n2. Bryst" + "\n3. Crawl" + "\n4. Rygcrawl" + "\n5. Rygsvømning" +
+                    "\n6. 200 m Medley kvinder" + "\n7. 200m Medley mænd" + "\n8. Marathon 10 km" + "\n9. Hundesvømning" +
+                    "\n0. Gem data og Afslut trænermenuen" );
+            menuChoice = sc.next().charAt(00);
             switch(menuChoice) {
                 case '1' :
                     System.out.println("BUTTERFLY\nHvad vil du gøre?" +
@@ -42,7 +43,7 @@ public class CoachMenu {
                     menuChoice = sc.next().charAt(0);
                     switch(menuChoice) {
                         case '1':
-                            System.out.print("Indtast MedlemsID for den svømmer som har en ny bedste BUTTERFLY tid:");
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste BUTTERFLY tid:");
                             medlemsID = sc.nextInt();
                             System.out.println("");
                             int[] c = new int[3];
@@ -50,8 +51,6 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeButterfly(b);
-                            WriteData write = new WriteData();
-                            write.writeData(memberList);
                         case '2':
                             System.out.println("");
                     }
@@ -76,47 +75,162 @@ public class CoachMenu {
                     skriver vores medlemsliste i en fil**/
                     break;
                 case '2' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("BRYST\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste BRYST tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeBreast(b);
+                        case '2':
+                            System.out.println("");
+                    }
 
                     break;
                 case '3' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("CRAWL\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste CRAWL tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeCrawl(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '4' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("RYGCRAWL\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste RYGCRAWL tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeBackCrawl(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '5' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("RYGSVØMNING\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste RYGSVØMNING tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeBackStroke(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '6' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("200mMEDLEY KVINDER\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste 200mMEDLEY KVINDER tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeMedley200Women(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '7' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("200mMEDLEY MÆND\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste 200mMEDLEY MÆND tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeMedley200Men(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '8' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("MARATHON 10 KM\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
-
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste MARATHON 10 KM tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeMarathon10K(b);
+                        case '2':
+                            System.out.println("");
+                    }
+                    break;
                 case '9' :
-                    System.out.println("BUTTERFLY\nHvad vil du gøre?" +
+                    System.out.println("HUNDESVØMNING\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
+                    switch(menuChoice) {
+                        case '1':
+                            System.out.print("Indtast MedlemsID for den svømmer som\n har en ny bedste HUNDESVØMNING tid:");
+                            medlemsID = sc.nextInt();
+                            System.out.println("");
+                            int[] c = new int[3];
+                            c = bestTime(memberList, medlemsID);
+                            int a = c[0];
+                            int b = c[1];
+                            memberList.get(a).setBestTimeDogPaddle(b);
+                        case '2':
+                            System.out.println("");
+                    }
 
+                    break;
+
+                case '0' :
                     choiceLoop = false;
+                    WriteData write = new WriteData();
+                    write.writeData(memberList);
+                    String[] args = {};
+                    try {
+                        Login.main(args);
+                    } catch(Exception ex) {
+                        ex.printStackTrace();
+                    }
                     break;
                 default :
                     System.out.println("Ugyldigt valg, prøv igen.");

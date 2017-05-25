@@ -97,20 +97,21 @@ public class Member implements Serializable, Comparable {
         "\nTrænerprioritet 1: " + coachChoice1 +
         "\nTrænerprioritet 2: " + coachChoice2 +
         "\nTrænerprioritet 3: " + coachChoice3 +
-        "\nBedste Butterfly Tid: " + bestTimeButterfly + " millisekunder";
-
-
+        "\nBedste Butterfly Tid: " + bestTimeButterfly + " millisekunder" +
+        "\nBedste Bryst Tid: " + bestTimeBreast + " millisekunder" +
+        "\nBedste Crawl Tid: " + bestTimeCrawl + " millisekunder" +
+        "\nBedste Rygcrawl Tid: " + bestTimeBackCrawl + " millisekunder" +
+        "\nBedste Rygsvømning Tid: " + bestTimeBackStroke + " millisekunder" +
+        "\nBedste Medley 200 m kvinder Tid: " + bestTimeMedley200Women + " millisekunder" +
+        "\nBedste Medley 200 m mænd Tid: " + bestTimeMedley200Men + " millisekunder" +
+        "\nBedste Marathon 10 km Tid: " + bestTimeMarathon10K + " millisekunder" +
+        "\nBedste Hundesvømning Tid: " + bestTimeDogPaddle + " millisekunder";
     }
 
     @Override
     public int compareTo(Object compare) {
-<<<<<<< HEAD
         int compareTime = ((Member)compare).getBirthYear();
         return this.birthYear - compareTime;
-=======
-        int compareBirthYear = ((Member)compare).getBirthYear();
-        return this.birthYear - compareBirthYear;
->>>>>>> origin/master
    }
 
     public String getFirstName() {

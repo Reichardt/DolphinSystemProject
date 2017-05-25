@@ -29,7 +29,7 @@ public class Login {
         }
 
         boolean loginSuccess = false;
-        int loginMemberID;
+        int loginMemberID = 0;
         /**
          Login:
          Brugeren indtaster et medlems ID og et password. Systemet søger
