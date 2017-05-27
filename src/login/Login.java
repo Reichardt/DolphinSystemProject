@@ -37,7 +37,7 @@ public class Login {
          * Hvis systemet ikke finder kombinationen skal brugeren forsøge login igen.
          **/
 
-        /** Login loop kører until for loop sætter loginSuccess = true **/
+        /** Login loop kører indtil for loop sætter loginSuccess = true **/
         do {
             System.out.print("LOGIN" +
                     "\nMedlems ID: ");

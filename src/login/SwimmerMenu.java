@@ -34,6 +34,9 @@ public class SwimmerMenu {
                     "\n1. V√¶lg foretrukne tr√¶nere." + "\n2. Registr√©r aktive discipliner" + "\n3. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
+            /**
+            TrÊnerliste
+            **/
                 case '1' :
                     System.out.println("Liste over tr√¶nere:");
                     for (int i = 0; i < memberList.size(); i++) {
@@ -43,6 +46,9 @@ public class SwimmerMenu {
                                     ", Efternavn: " +memberList.get(i).getSurName());
                         }
                     }
+                    /**
+                    VÊlg 1., 2. og 3. trÊnerprioritet
+                    **/
                     System.out.println("MedlemsID:"+memberID);
                     for (int i = 0; i < memberList.size(); i++) {
                         if (memberList.get(i).getMemberID()==memberID) {
@@ -64,6 +70,9 @@ public class SwimmerMenu {
                     WriteData write = new WriteData();
                     write.writeData(memberList);
                     break;
+                    /**
+                    Registrer aktive discipliner
+                    **/
                 case '2' :
                     for (int i = 0; i < memberList.size(); i++) {
                         if (memberList.get(i).getMemberID()==memberID) {
@@ -121,6 +130,9 @@ public class SwimmerMenu {
                         }
                     }
                     break;
+                    /**
+                    Luk systemet
+                    **/
                 case '3' :
                     choiceLoop = false;
                     break;

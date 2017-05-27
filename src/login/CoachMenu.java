@@ -36,6 +36,10 @@ public class CoachMenu {
                     "\n6. 200 m Medley kvinder" + "\n7. 200m Medley mænd" + "\n8. Marathon 10 km" + "\n9. Hundesvømning" +
                     "\n0. Gem data og Afslut trænermenuen" );
             menuChoice = sc.next().charAt(00);
+            /**
+            V�lg sv�mmedisciplin eller afslut systemet. Alle sv�mmediscipliner har mulighed for
+            at indtaste ny bedste tid. Se top 5 sv�mmere valgbar men ikke funktionel.
+            **/
             switch(menuChoice) {
                 case '1' :
                     System.out.println("BUTTERFLY\nHvad vil du gøre?" +
@@ -51,6 +55,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeButterfly(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -71,6 +76,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeBreast(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -91,6 +97,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeCrawl(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -110,6 +117,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeBackCrawl(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -129,6 +137,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeBackStroke(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -148,6 +157,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeMedley200Women(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -167,6 +177,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeMedley200Men(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -186,6 +197,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeMarathon10K(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
@@ -205,6 +217,7 @@ public class CoachMenu {
                             int a = c[0];
                             int b = c[1];
                             memberList.get(a).setBestTimeDogPaddle(b);
+                            break;
                         case '2':
                             System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");

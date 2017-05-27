@@ -8,6 +8,9 @@ public class Coach extends Member {
     }
 
     public double getFee() {
+    /**
+    Træner får løn istedet for at skulle betale kontingent
+    **/
         return super.getFee() * -1;
     }
 

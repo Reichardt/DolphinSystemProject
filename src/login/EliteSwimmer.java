@@ -1,7 +1,7 @@
 package login;
+import java.io.Serializable;
 
 public class EliteSwimmer extends Member {
-
     private boolean butterfly;
     private double bestTimeButterfly;
     private boolean breast;
@@ -24,7 +24,7 @@ public class EliteSwimmer extends Member {
     private int coachChoice2;
     private int coachChoice3;
 
-    public EliteSwimmer(String firstName, String surName, String email, int birthYear, int memberID,
+    public EliteSwimmer (String firstName, String surName, String email, int birthYear, int memberID,
                         String password, boolean isFemale, double fee, boolean hasPaid) {
         super(firstName, surName, email, birthYear, memberID, password, isFemale, fee, hasPaid);
     }

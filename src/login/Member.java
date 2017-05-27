@@ -114,6 +114,10 @@ public class Member implements Serializable, Comparable {
         return this.birthYear - compareTime;
    }
 
+   /**
+   Setters og getters
+   **/
+
     public String getFirstName() {
         return firstName;
     }

@@ -47,6 +47,9 @@ public class ChairmanMenu {
                     "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem" + "\n4. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
+                /**
+                Opret nyt medlem
+                **/
                 case '1' :
                      /**
                     Diverse variabler der bruges nÃ¥r nyt medlem skal ind i ArrayListen.
@@ -62,6 +65,9 @@ public class ChairmanMenu {
                     double fee = 0;
                     String keyinput;
 
+                     /**
+                     Loop som fortsætter indtil et ikke-eksisterende medlemsID vælges
+                     **/
                         do {
                             System.out.println("SÃ¦t medlemsid, ID'et SKAL vÃ¦re fire cifre: " +
                                         "\n1 = Formand, 2 = Kasserer, 3 = TrÃ¦ner, 4 = SvÃ¸mmer." +
@@ -91,6 +97,9 @@ public class ChairmanMenu {
                         } else {
                             isFemale = false;
                         }
+                        /**
+                        Nogle if-sætninger for at undgå spørgsmål, der allerede er udelukket
+                        **/
                         System.out.println("Er medlemmet aktivt? (j/n)");
                         keyinput = sc.next();
                         if (keyinput.equalsIgnoreCase("j")) {
@@ -171,6 +180,9 @@ public class ChairmanMenu {
 
 
                     break;
+                    /**
+                    Redigér medlem
+                    **/
                 case '2' :
                     System.out.println("Indtast medlemsID for det medlem som skal redigeres: ");
                     int editSearch = sc.nextInt();
@@ -189,6 +201,9 @@ public class ChairmanMenu {
                                         + "\n7. Aktiv/Passiv status. \n8. Afslut redigering.");
 
                                 char editMember = sc.next().charAt(0);
+                                /**
+                                Switch til at vælge hvilken egenskab, der skal redigéres
+                                **/
                                 switch(editMember) {
                                     case '1' :
                                         System.out.println("Angiv medlemmets nye fornavn:");
@@ -245,13 +260,12 @@ public class ChairmanMenu {
                                         System.out.println("Ugyldigt valg, prÃ¸v igen.");
                                 }
                             }
-                        } /**else {
-                            System.out.println("Ugyldigt medlemsID. Medlemmet kan derfor ikke redigeres!");
-                            System.out.println("");
-                            break;
-                        } **/
+                        } 
                     }
                     break;
+                    /**
+                    Slet medlem
+                    **/
                 case '3' :
                     System.out.println("Indtast medlemsID for det medlem som skal slettes: ");
                     int deleteSearch = sc.nextInt();
@@ -272,6 +286,9 @@ public class ChairmanMenu {
                         }
                     }
                     break;
+                    /**
+                    Luk systemet
+                    **/
                 case '4' :
                     choiceLoop = false;
                     break;
