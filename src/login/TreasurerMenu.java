@@ -34,9 +34,12 @@ public class TreasurerMenu {
                 "\n1. Check kontingentrestance. " + "\n2. Registrér kontingentbetaling." + "\n3. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
+<<<<<<< HEAD
             /**
             Hvem har ikke betalt kontingent
             **/
+=======
+>>>>>>> 331f4248a9a6abf34794e4778844c7d4e98fc168
              case '1' :
                 System.out.println("Medlemmer der ikke har betalt kontingent: ");
                  boolean search = false;
@@ -82,9 +85,12 @@ public class TreasurerMenu {
                 WriteData write = new WriteData();
                 write.writeData(memberList);
                 break;
+<<<<<<< HEAD
                 /**
                 Luk systemet
                 **/
+=======
+>>>>>>> 331f4248a9a6abf34794e4778844c7d4e98fc168
              case '3' :
                  choiceLoop = false;
                  break;
