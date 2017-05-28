@@ -204,7 +204,7 @@ public class CoachMenu {
                     }
                     break;
                 case '9' :
-                    System.out.println("HUNDESVØMNING\nHvad vil du gøre?" +
+                    System.out.println("HUNDESV�MNING\nHvad vil du gøre?" +
                                         "\n1. Indtast ny bedste tid" + "\n2. Se top 5 svømmere");
                     menuChoice = sc.next().charAt(0);
                     switch(menuChoice) {
@@ -219,7 +219,7 @@ public class CoachMenu {
                             memberList.get(a).setBestTimeDogPaddle(b);
                             break;
                         case '2':
-                            System.out.println("GLÆD DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
+                            System.out.println("GL�D DIG TIL DENNE FUNKTION I VERSION 99.2 :-)");
                             System.out.println("\n\n\n");
                     }
 
@@ -255,7 +255,7 @@ public class CoachMenu {
 
         for (i = 0; i < memberList.size(); i++) {
             if (memberList.get(i).getMemberID()==medlemsID) {
-                System.out.println("Angiv svømmetiden herunder");
+                System.out.println("Angiv sv�mmetiden herunder");
                 System.out.print("Angiv antal minutter:");
                 minutter = sc.nextInt();
                 System.out.println("");

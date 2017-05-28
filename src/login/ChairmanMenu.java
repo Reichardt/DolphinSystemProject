@@ -44,7 +44,9 @@ public class ChairmanMenu {
         {
 
             System.out.println("Velkommen formand, hvad vil du i dag?" +
-                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem" + "\n4. Lav backup fil af madlemslisten" + "\n5. Luk Dolphin System");
+                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" +
+                    "\n3. Slet medlem" + "\n4. Lav backup fil af medlemslisten" +
+                    "\n5. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
                 /**
@@ -69,9 +71,13 @@ public class ChairmanMenu {
                      Loop som fortsætter indtil et ikke-eksisterende medlemsID vælges
                      **/
                         do {
-                            System.out.println("Sæt medlemsid, ID'et SKAL være fire cifre: " +
+                            System.out.print("Sæt medlemsid, ID'et SKAL være fire cifre: " +
                                         "\n1 = Formand, 2 = Kasserer, 3 = Træner, 4 = Svømmer." +
-                                        "\nFørste ciffer bestemmer brugerrettighedder.");
+                                        "\nFørste ciffer bestemmer brugerrettighedder." +
+                                        "\n Hvis det er et passivt medlem eller en motionssvømmer" +
+                                        "\n skal ID'et starte med 5 og password skal være det samme" +
+                                        "\n som ID'et." +
+                                        "\nVælg ID: ");
                             memberID = sc.nextInt();
                             for (int i = 0; i < memberList.size(); i++) {
                                 if(memberList.get(i).getMemberID()==(memberID)) {
