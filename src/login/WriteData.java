@@ -5,9 +5,9 @@ import java.util.*;
 
 public class WriteData {
 
-    public static void writeData(ArrayList<Member> memberList) {
+    public static void writeData(ArrayList<Member> memberList, String filename) {
         try {
-            FileOutputStream fos = new FileOutputStream("memberList.txt");
+            FileOutputStream fos = new FileOutputStream(filename);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(memberList); // write memberList to ObjectOutputStream
             oos.close();

@@ -80,7 +80,7 @@ public class TreasurerMenu {
                 /** Herunder kalder vi klassen WriteData, som skaber en outputstream og
                 skriver vores medlemsliste i en fil **/
                 WriteData write = new WriteData();
-                write.writeData(memberList);
+                write.writeData(memberList, "memberList.txt");
                 break;
                 /**
                 Luk systemet

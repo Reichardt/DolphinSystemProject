@@ -17,7 +17,7 @@ public class ChairmanMenu {
     public static void chairmanMenu() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Member> memberList = new ArrayList<Member>();
-        
+
         /**
          FileInputStreamen lÃ¦ser memberList.txt filen,
          og gendanner userList ArrayListen.
@@ -44,7 +44,7 @@ public class ChairmanMenu {
         {
 
             System.out.println("Velkommen formand, hvad vil du i dag?" +
-                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem" + "\n4. Luk Dolphin System");
+                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem" + "\n4. Lav backup fil af madlemslisten" + "\n5. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
                 /**
@@ -66,7 +66,7 @@ public class ChairmanMenu {
                     String keyinput;
 
                      /**
-                     Loop som fortsætter indtil et ikke-eksisterende medlemsID vælges
+                     Loop som fortsÃ¦tter indtil et ikke-eksisterende medlemsID vÃ¦lges
                      **/
                         do {
                             System.out.println("SÃ¦t medlemsid, ID'et SKAL vÃ¦re fire cifre: " +
@@ -98,7 +98,7 @@ public class ChairmanMenu {
                             isFemale = false;
                         }
                         /**
-                        Nogle if-sætninger for at undgå spørgsmål, der allerede er udelukket
+                        Nogle if-s?ninger for at undg?sp?rgsm?, der allerede er udelukket
                         **/
                         System.out.println("Er medlemmet aktivt? (j/n)");
                         keyinput = sc.next();
@@ -181,7 +181,7 @@ public class ChairmanMenu {
 
                     break;
                     /**
-                    Redigér medlem
+                    Redig? medlem
                     **/
                 case '2' :
                     System.out.println("Indtast medlemsID for det medlem som skal redigeres: ");
@@ -202,7 +202,7 @@ public class ChairmanMenu {
 
                                 char editMember = sc.next().charAt(0);
                                 /**
-                                Switch til at vælge hvilken egenskab, der skal redigéres
+                                Switch til at v?ge hvilken egenskab, der skal redig?es
                                 **/
                                 switch(editMember) {
                                     case '1' :
@@ -260,7 +260,7 @@ public class ChairmanMenu {
                                         System.out.println("Ugyldigt valg, prÃ¸v igen.");
                                 }
                             }
-                        } 
+                        }
                     }
                     break;
                     /**
@@ -287,9 +287,27 @@ public class ChairmanMenu {
                     }
                     break;
                     /**
-                    Luk systemet
+                    Lav backup af medlemslisten
                     **/
                 case '4' :
+                    System.out.print("Vil du lave en backup af medlemslisten?");
+                    keyinput = sc.next();
+                    if (keyinput.equalsIgnoreCase("j")) {
+                        WriteData write = new WriteData();
+                        write.writeData(memberList, "memberListBACKUP.txt");
+                    } else {
+                        break;
+                    }
+                    System.out.println("");
+                    System.out.println("En backup af medlemslisten findes i samme mappe som medlemslisten");
+                    System.out.println("med navnet memberListBACKUP.txt. Gem denne fil pÃ¥ et eksternt drev");
+                    System.out.println("eller en USB-stick og husk at skrive dato for backup, sÃ¥ du ved hvornÃ¥r");
+                    System.out.println("den er fra.\n\n");
+                    break;
+                    /**
+                    Luk systemet
+                    **/
+                case '5' :
                     choiceLoop = false;
                     break;
                 default :
@@ -299,7 +317,7 @@ public class ChairmanMenu {
         skriver vores medlemsliste i en fil
         **/
         WriteData write = new WriteData();
-        write.writeData(memberList);
+        write.writeData(memberList, "memberList.txt");
     }
 }
 }

@@ -228,7 +228,7 @@ public class CoachMenu {
                 case '0' :
                     choiceLoop = false;
                     WriteData write = new WriteData();
-                    write.writeData(memberList);
+                    write.writeData(memberList, "memberList.txt");
                     String[] args = {};
                     try {
                         Login.main(args);
