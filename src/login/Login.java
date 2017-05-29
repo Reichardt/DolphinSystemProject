@@ -8,10 +8,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author Nikolaj Reichardt
- */
 public class Login {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
