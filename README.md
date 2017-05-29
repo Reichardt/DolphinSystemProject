@@ -21,9 +21,8 @@ med dine egne foretrukne oplysninger.
 Muligheder i programmet.
 
 Programmet har 4 bruger typer.
-1. Admin, som har et User Create, update, read og delete.
-og som samtidig kan se evt. kontigent restance. + svømme tider for elite svømmere, og deres trænervalg
-2. kasserer som kan se betalingsstatus på alle medlemmer.
-3. træner som kan skrive svømmetider ind for elite svømmere.
-4. en elitesvømmer som kan vælge trænere
+1. Formand, som har kan oprette, redigere og slette brugere og som samtidig kan se evt. kontigent restance. + svømme tider for elitesvømmere, og deres trænervalg.
+2. Kasserer som kan se betalingsstatus på alle medlemmer, samt notere hvis et medlem har betalt.
+3. Trænere som kan skrive svømmetider ind for elitesvømmere.
+4. Elitesvømmere som kan vælge trænere og vælge hvilke discipliner de er aktive indenfor.
 
