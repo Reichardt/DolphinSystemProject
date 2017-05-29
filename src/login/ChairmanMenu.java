@@ -296,7 +296,7 @@ public class ChairmanMenu {
                     Lav backup af medlemslisten
                     **/
                 case '4' :
-                    System.out.print("Vil du lave en backup af medlemslisten?");
+                    System.out.print("Vil du lave en backup af medlemslisten? (j/n)");
                     keyinput = sc.next();
                     if (keyinput.equalsIgnoreCase("j")) {
                         WriteData write = new WriteData();
