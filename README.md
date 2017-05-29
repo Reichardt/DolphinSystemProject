@@ -6,7 +6,7 @@ For at kunne køre programmet skal du sikre dig at du har flg. installeret
 2. En java compiler da filerne ikke er bytecode men sourcefiles sådan en kan du evt. 
 Hente herfra. http://spider.eng.auburn.edu/user-cgi/grasp/grasp.pl?;dl=download_jgrasp.html
 
-Vi har lavet programmet til jGrasp, da dette har været en del af pensum på vores studie.
+Vi har lavet programmet til jGrasp, da dette har været en del af pensum på vores studie. jGRASP kan dog gice problemer, hvorfor vi foreslår at man bruger en anden IDE, som eksempelvis NetBeans eller IntelliJ.
 
 Vi har predefineret 4 brugere, som du kan teste systemet med. Disse er:
 1. En formand med medlemsID: 1001 og password: formand1
